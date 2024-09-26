@@ -5,8 +5,7 @@ public class Laboratory5 {
     public static void main(String[] args){
         
         Scanner sc = new Scanner(System.in);
-        
-        
+         //Menu tab      
         System.out.println("MENU:");
         System.out.println("1.Burger    - php100");
         System.out.println("2.Fries     - PHP50");
@@ -14,52 +13,44 @@ public class Laboratory5 {
         System.out.println("4.Ice cream - PHP45");
         System.out.println("5.EXIT");
         
-        
-        
+        //User to input valid menu number
         System.out.print("Enter the valid menu number (1-5):");
         int menu = sc.nextInt();
         
-        System.out.print("Enter Quantity:");
-        int qty = sc.nextInt();
-        
-        
+        int price1 = 100, price2 = 50, price3 = 30, price4 = 45; 
+         //Switch method    
+         //Userinput for the selection for the menu 
         switch (menu) {
             case 1:
                 System.out.println("Your order is: Buger - PHP100");
-                int price2 = 100;
+                System.out.print("Enter Quantity:");
+                int qty1 = sc.nextInt();
+                System.out.println("Your total is: " + qty1 * price1);
                 break;
             case 2:
                 System.out.println("Your order is: Fries - PHP50");
-                int price2 = 50;
+                System.out.print("Enter Quantity:");
+                int qty2 = sc.nextInt();
+                System.out.println("Your total is: " + qty2 * price2);
                 break;
             case 3: 
                 System.out.println("Your order is: Soda - PHP30");
-                int price2 = 30;
+                System.out.print("Enter Quantity:");
+                int qty3 = sc.nextInt();
+                System.out.println("Your total is: " + qty3 * price3);
                 break;
             case 4: 
-                System.out.println("Your order is: Ice cream - PHP45");
-                int price2 = 45;
+                System.out.println("Your order is: Ice cream - PHP45");               
+                System.out.print("Enter Quantity:");
+                int qty4 = sc.nextInt();
+                System.err.println("Your total is: " + qty4 * price4);
                 break;
-            case 5:
-                System.out.println("EXIT");
+            case 5:                
+                System.out.println("Thank you, Come again!");
+                break;
+            default: 
+                System.out.println("Invalid number");   //if user inputed 6 and above the system will show invalid number
                 break;
         }
-        
-        
-        int totalAmount = qty * price2;
-        
-        System.out.print("Your order is: " + menu);
-        System.out.print("total amount: " + totalAmount);
-        
-        
-        
-        
-        
-        
-    
-    
-    
-    
-    
     }
 }
