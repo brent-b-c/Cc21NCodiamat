@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+
+public class Laboratory5 {
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+        
+        
+        System.out.println("MENU:");
+        System.out.println("1.Burger    - php100");
+        System.out.println("2.Fries     - PHP50");
+        System.out.println("3.Soda      - PHP30");
+        System.out.println("4.Ice cream - PHP45");
+        System.out.println("5.EXIT");
+        
+        
+        
+        System.out.print("Enter the valid menu number (1-5):");
+        int menu = sc.nextInt();
+        
+        System.out.print("Enter Quantity:");
+        int qty = sc.nextInt();
+        
+        
+        switch (menu) {
+            case 1:
+                System.out.println("Your order is: Buger - PHP100");
+                int price2 = 100;
+                break;
+            case 2:
+                System.out.println("Your order is: Fries - PHP50");
+                int price2 = 50;
+                break;
+            case 3: 
+                System.out.println("Your order is: Soda - PHP30");
+                int price2 = 30;
+                break;
+            case 4: 
+                System.out.println("Your order is: Ice cream - PHP45");
+                int price2 = 45;
+                break;
+            case 5:
+                System.out.println("EXIT");
+                break;
+        }
+        
+        
+        int totalAmount = qty * price2;
+        
+        System.out.print("Your order is: " + menu);
+        System.out.print("total amount: " + totalAmount);
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    
+    }
+}
