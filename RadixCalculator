@@ -1,0 +1,59 @@
+
+import java.util.Scanner;
+
+public class RadixCalculator {
+    private static int userInputRadix;
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+        
+        boolean userInputStop = false;
+        boolean isInputValid = true;
+        String continueOrExit = "";
+        String userInputNumber = "";
+        int userInputRadix = 0;
+        
+        while (true) {
+            System.out.print("Input 'stop' to exit the program or enter to continue: ");
+            continueOrExit = sc.nextLine();
+            
+            System.out.println(continueOrExit);
+            if (continueOrExit.equals("STOP")){
+                userInputStop = true;
+                System.out.print("Current value of UserInput: " + userInputStop);
+                userInputStop = true;
+                System.out.println("current value of userInputStop: " + userInputStop);
+            }
+            
+            System.out.print("Input a radix: ");
+            userInputRadix = Integer.parseInt(sc.nextLine());
+            
+            if (userInputRadix < 2 || userInputRadix > 16){ 
+                System.out.print("The radix should be between 2 and 16 only. ");
+                System.out.println();
+                continue; 
+            }
+            System.out.print("Input a number: ");
+            userInputNumber = sc.nextLine();
+            
+            
+            for (int i=0; i<userInputNumber.length(); i++){
+                boolean isCharacterValid = false;
+                //System.out.println(userInputNumber.charAt(i));
+                int intValueOfChar = Character.getNumericValue(userInputNumber.charAt(i));
+                
+                if (intValueOfChar >= userInputRadix) { // radix 5, 0,1,2,3,4
+                    isCharacterValid = false;
+                }
+                
+                if (isCharacterValid){
+                    
+                }
+            
+            }
+          }
+        
+            
+        
+    } 
+}
