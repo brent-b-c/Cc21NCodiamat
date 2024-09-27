@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class RadixCalculator {
     private static int userInputRadix;
+    private static boolean isInputvalid;
     public static void main(String[] args){
         
         Scanner sc = new Scanner(System.in);
@@ -38,22 +39,44 @@ public class RadixCalculator {
             
             
             for (int i=0; i<userInputNumber.length(); i++){
-                boolean isCharacterValid = false;
+                
                 //System.out.println(userInputNumber.charAt(i));
                 int intValueOfChar = Character.getNumericValue(userInputNumber.charAt(i));
                 
-                if (intValueOfChar >= userInputRadix) { // radix 5, 0,1,2,3,4
-                    isCharacterValid = false;
+                if (userInputRadix > 10){
+                    if (userInputNumber.charAt(i) == 'A'){
+                        intValueOfChar = 10;
+                    }
+                     if (userInputNumber.charAt(i) == 'B'){
+                        intValueOfChar = 11;
+                    }
+                      if (userInputNumber.charAt(i) == 'C'){
+                        intValueOfChar = 12;
+                    }
+                       if (userInputNumber.charAt(i) == 'D'){
+                        intValueOfChar = 13;
+                    }
+                         if (userInputNumber.charAt(i) == 'E'){
+                        intValueOfChar = 14;
+                    }
+                         if (userInputNumber.charAt(i) == 'F'){
+                        intValueOfChar = 15;
+                    }
                 }
                 
-                if (isCharacterValid){
-                    
+                //check if inputChar is < radix 
+                if (intValueOfChar >= userInputRadix) {
+                    isInputvalid = false;
                 }
             
             }
+            if (!isInputvalid){
+                System.out.println("Input is not valid");
+                System.out.println();
+                continue;
+                
+                
           }
-        
-            
-        
+       }                            
     } 
 }
