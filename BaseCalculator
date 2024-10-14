@@ -1,0 +1,91 @@
+
+//test code
+
+
+
+import java.util.Scanner;
+
+public class BaseCalculator {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("Base Calculator");
+        System.out.println("Choose number base:");
+        System.out.println("1. Decimal");
+        System.out.println("2. Hexadecimal");
+        System.out.println("3. Binary");
+        System.out.println("4. Octal");
+        System.out.print("Select base (1-4): ");
+        int baseChoice = scanner.nextInt();
+
+        System.out.print("Enter first number: ");
+        String num1 = scanner.next();
+        System.out.print("Enter second number: ");
+        String num2 = scanner.next();
+        System.out.print("Choose operation (+, -, *, /): ");
+        char operation = scanner.next().charAt(0);
+
+        // Convert input numbers to decimal
+        int num1Decimal = convertToDecimal(num1, baseChoice);
+        int num2Decimal = convertToDecimal(num2, baseChoice);
+
+        int result = 0;
+
+        // Perform the operation
+        switch (operation) {
+            case '+':
+                result = num1Decimal + num2Decimal;
+                break;
+            case '-':
+                result = num1Decimal - num2Decimal;
+                break;
+            case '*':
+                result = num1Decimal * num2Decimal;
+                break;
+            case '/':
+                if (num2Decimal == 0) {
+                    System.out.println("Error: Division by zero.");
+                    return;
+                }
+                result = num1Decimal / num2Decimal;
+                break;
+            default:
+                System.out.println("Invalid operation.");
+                return;
+        }
+
+        // Print the result in the selected base
+        String resultString = convertFromDecimal(result, baseChoice);
+        System.out.println("Result: " + resultString);
+    }
+
+    private static int convertToDecimal(String number, int base) {
+        switch (base) {
+            case 1: // Decimal
+                return Integer.parseInt(number);
+            case 2: // Hexadecimal
+                return Integer.parseInt(number, 16);
+            case 3: // Binary
+                return Integer.parseInt(number, 2);
+            case 4: // Octal
+                return Integer.parseInt(number, 8);
+            default:
+                throw new IllegalArgumentException("Invalid base.");
+        }
+    }
+
+    private static String convertFromDecimal(int number, int base) {
+        switch (base) {
+            case 1: // Decimal
+                return Integer.toString(number);
+            case 2: // Hexadecimal
+                return Integer.toHexString(number).toUpperCase();
+            case 3: // Binary
+                return Integer.toBinaryString(number);
+            case 4: // Octal
+                return Integer.toOctalString(number);
+            default:
+                throw new IllegalArgumentException("Invalid base.");
+        }
+    }
+}
