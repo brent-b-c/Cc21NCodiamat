@@ -1,7 +1,6 @@
-//Brent B. Codiamat
+//Codiamat, Brent B.
 //CITCS 1G-B
-//February 12, 2025
-
+//February 14, 2025
 import java.util.Scanner;
 
 class BankAccount {
@@ -51,10 +50,11 @@ public class BankSystem {
         String accountNumber = sc.nextLine();
         account.setAccountNumber(accountNumber);
 
-        //choice
+        //choices 
         int choice;
         do {
-            System.out.println("\nChoose an action:");
+            System.out.println("\nAccount number: " + account.getAccountNumber());
+            System.out.println("Choose an action:");
             System.out.println("1. Deposit");
             System.out.println("2. Withdraw");
             System.out.println("3. Check Balance");
@@ -62,6 +62,7 @@ public class BankSystem {
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
 
+            //switch case for choices
             switch (choice) {
                 case 1:
                     // Deposit money
@@ -77,7 +78,7 @@ public class BankSystem {
                     break;
                 case 3:
                     // Check balance
-                    System.out.println("Current balance: " + account.getBalance());
+                    System.out.println("\nCurrent balance: " + account.getBalance());
                     break;
                 case 4:
                     // Exit
