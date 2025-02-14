@@ -26,7 +26,7 @@ class BankAccount {
     public void withdraw(double amount) {
         if (this.balance >= amount) {
             this.balance -= amount;
-            System.out.println("Withdrawal successful: " + amount);
+            System.out.printf("Withdrawal successful: %,.2f%n", amount);
         } else {
             System.out.println("Insufficient balance");
         }
@@ -35,7 +35,7 @@ class BankAccount {
     // Method to deposit money
     public void deposit(double amount) {
         this.balance += amount;
-        System.out.println("Deposit successful: " + amount);
+        System.out.printf("Deposit successful: %,.2f%n", amount);
     }
 }
 
@@ -43,7 +43,7 @@ class BankAccount {
 public class BankSystem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        BankAccount account = new BankAccount();
+        BankAccount account = new BankAccount();    
 
         // Set the account number
         System.out.print("Enter account number: ");
@@ -78,7 +78,7 @@ public class BankSystem {
                     break;
                 case 3:
                     // Check balance
-                    System.out.println("\nCurrent balance: " + account.getBalance());
+                    System.out.printf("Current balance: %,.2f%n", account.getBalance());
                     break;
                 case 4:
                     // Exit
