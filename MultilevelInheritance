@@ -1,0 +1,96 @@
+//Brent B. Codiamat
+//CITCS 1G-B
+
+
+//Dog
+class Mamal{
+    void eat(){
+        System.out.println("Dog is eating..");
+    }
+}
+
+//breathing
+class Animal extends Mamal{
+    void breathing(){
+        System.out.println("Dog is breathing..");
+    }
+}
+
+//barking
+class Dog extends Animal{
+    void barking(){
+        System.out.println("Dog is barking");
+    }
+}
+
+//Vehicle
+class Vehicle{
+    void start(){
+        System.out.println("vehicle is starting..");
+    }
+}
+
+//model
+class Model extends Vehicle{
+    void model(){
+        System.out.println("The model of the car is nissan");
+    }
+}
+
+//topspeed
+class TopSpeed extends Model{
+    void topSpeed(){
+        System.out.println("The car's top speed it 200kp/h");
+    }
+}
+
+//color
+class Color extends TopSpeed{
+    void color(){
+        System.out.println("The color is Black");
+    }
+}
+
+//accelerate
+class Accelerate extends Color{
+    void carMoves(){
+        System.out.println("The car is moving..");
+    }
+}
+
+//brake
+class Brake extends Accelerate{
+    void carStop(){
+        System.out.println("The car stopped.");
+    }
+}
+
+//main
+public class MultilevelInheritance {
+    public static void main(String[] args) {
+
+        //instantiation of dog
+        Dog d = new Dog();
+        System.out.println("Dog: ");
+
+        //call for dog
+        d.eat();
+        d.breathing();
+        d.barking();
+
+        //for space 
+        System.out.println();
+
+        //instantiation of vehicle
+        Brake myCar = new Brake();
+        System.out.println("Vehicle: ");
+
+        //call for vehicle
+        myCar.start();
+        myCar.model();
+        myCar.topSpeed();
+        myCar.color();
+        myCar.carMoves();
+        myCar.carStop();
+    }
+}
